@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for policies_scraper project
+# Scrapy settings for page_watcher_scraper project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,14 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'policies_scraper'
+BOT_NAME = 'page_watcher_scraper'
 
-SPIDER_MODULES = ['policies_scraper.spiders']
-NEWSPIDER_MODULE = 'policies_scraper.spiders'
+SPIDER_MODULES = ['page_watcher_scraper.spiders']
+NEWSPIDER_MODULE = 'page_watcher_scraper.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'policies_scraper (+http://www.yourdomain.com)'
+#USER_AGENT = 'page_watcher_scraper (+http://www.yourdomain.com)'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS=32
@@ -44,13 +44,13 @@ NEWSPIDER_MODULE = 'policies_scraper.spiders'
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'policies_scraper.middlewares.MyCustomSpiderMiddleware': 543,
+#    'page_watcher_scraper.middlewares.MyCustomSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'policies_scraper.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'page_watcher_scraper.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -62,7 +62,7 @@ NEWSPIDER_MODULE = 'policies_scraper.spiders'
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'policies_scraper.pipelines.SomePipeline': 300,
+#    'page_watcher_scraper.pipelines.SomePipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -111,7 +111,7 @@ DOWNLOADER_MIDDLEWARES = {
 }
 
 ITEM_PIPELINES = {
-    'policies_scraper.pipelines.PoliciesScraperPipeline': 300,
+    'page_watcher_scraper.pipelines.PageWatcherScraperPipeline': 300,
 }
 
 HTTPCACHE_ENABLED = True # default False

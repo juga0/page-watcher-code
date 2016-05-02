@@ -9,14 +9,14 @@ import os.path
 from scrapy.utils.project import get_project_settings
 import logging
 
-from policies_scraper.util import html2md
+from page_watcher_scraper.util import html2md
 
 
 settings = get_project_settings()
 logger = logging.getLogger(__name__)
 
 
-class PoliciesScraperPipeline(object):
+class PageWatcherScraperPipeline(object):
 
     @classmethod
     def from_crawler(cls, crawler):

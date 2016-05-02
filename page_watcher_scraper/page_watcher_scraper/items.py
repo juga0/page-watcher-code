@@ -8,7 +8,7 @@
 import scrapy
 
 
-class PoliciesScraperItem(scrapy.Item):
+class PageWatcherScraperItem(scrapy.Item):
     # define the fields for your item here like:
     content = scrapy.Field()
     # FIXME: store in the item the metadata?
