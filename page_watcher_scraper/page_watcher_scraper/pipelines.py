@@ -38,8 +38,10 @@ class PageWatcherScraperPipeline(object):
             md = html2md(item['content'])
             try:
                 self.policies.write(md)
-            except UnicodeEncodeError:
-                pass
+                logger.debug('wrote content %s' % md)
+                logger.debug('to file %s' % self.policies_path)
+            except UnicodeEncodeError, e:
+                logger.exception(e)
             logger.debug('wroten policies data %s' % self.policies_path)
             # FIXME: append metadata in other file
         return item
