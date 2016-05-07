@@ -3,16 +3,17 @@
 
 # FIXME: move this file outside scrapy project?
 from page_watcher import read_yaml, commit, create_policy_file_path, \
-    CONFIG_PATH, RULES_PATH, POLICIES_DATA_REPO_PATH
+    CONFIG_PATH, RULES_PATH, DATA_REPO_PATH
 
 import logging
 
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 
 def main():
 
-    config = read_yaml(CONFIG_PATH)
+    repos = read_yaml(CONFIG_PATH)
     # FIXME: obtain last commit?
 
     rules = read_yaml(RULES_PATH)
@@ -31,9 +32,10 @@ def main():
     logger.debug('starting crawler')
     # the script will block here until the crawling is finished
     process.start()
+    process.stop()
 
-    commit(POLICIES_DATA_REPO_PATH)
-    # FIXME: push to remote repo
+    for repo in repos:
+        commit(DATA_REPO_PATH, repo['url'], repo['name'])
 
 if __name__ == "__main__":
     main()

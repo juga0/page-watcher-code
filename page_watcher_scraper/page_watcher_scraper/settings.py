@@ -105,17 +105,17 @@ COOKIES_ENABLED = False
 
 # with no default HttpProxyMiddleware, the environment variables will be used
 # FIXME: check https with proxy
-DOWNLOADER_MIDDLEWARES = {
-    'scrapy.downloadermiddlewares.httpcache.HttpCacheMiddleware': 500,
-    # 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware':  None,
-}
+# DOWNLOADER_MIDDLEWARES = {
+#     'scrapy.downloadermiddlewares.httpcache.HttpCacheMiddleware': 500,
+#     # 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware':  None,
+# }
 
 ITEM_PIPELINES = {
     'page_watcher_scraper.pipelines.PageWatcherScraperPipeline': 300,
 }
 
-HTTPCACHE_ENABLED = True # default False
-HTTPCACHE_DIR = DATA_PATH # default 'httpcache'
+# HTTPCACHE_ENABLED = True # default False
+# HTTPCACHE_DIR = DATA_PATH # default 'httpcache'
 
 # ## extra settings
 
@@ -153,18 +153,18 @@ POLICY_TYPES = {
 # GIT_AUTHOR_NAME = "OII Policies Robot"
 # GIT_AUTHOR_EMAIL = "robots@oii.org"
 # # BASE_PATH = dirname(dirname(abspath(__file__)))
-# ROOT_PATH = dirname(BASE_PATH)
-# POLICIES_CONFIG_REPO = 'policies_config'
-# POLICIES_RULES_REPO = 'policies_rules'
-# POLICIES_DATA_REPO = 'policies_data'
-# POLICIES_CONFIG_REPO_PATH = join(ROOT_PATH, 'policies_config')
-# POLICIES_RULES_REPO_PATH = join(ROOT_PATH, 'policies_rules')
-# POLICIES_DATA_REPO_PATH = join(ROOT_PATH, 'policies_data')
+ROOT_PATH = dirname(BASE_PATH)
+# CONFIG_REPO = 'page-watcher-config'
+# RULES_REPO = 'page-watcher-rules'
+DATA_REPO = 'page-watcher-data'
+# CONFIG_REPO_PATH = join(ROOT_PATH, 'policies_config')
+# RULES_REPO_PATH = join(ROOT_PATH, 'policies_rules')
+DATA_REPO_PATH = join(ROOT_PATH, DATA_REPO)
 # CONFIG_FILENAME = 'config.yml'
 # DATA_FILENAME = 'data.yml'
 # RULES_FILENAME = 'rules.yml'
-# CONFIG_PATH = join(ROOT_PATH, POLICIES_CONFIG_REPO, CONFIG_FILENAME)
-# RULES_PATH = join(ROOT_PATH, POLICIES_RULES_REPO, RULES_FILENAME)
+# CONFIG_PATH = join(ROOT_PATH, CONFIG_REPO, CONFIG_FILENAME)
+# RULES_PATH = join(ROOT_PATH, RULES_REPO, RULES_FILENAME)
 
 try:
     from settings_local import *
